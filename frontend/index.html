@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stress Signal Check</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <h1>Stress Signal Check</h1>
+
+    <p class="subtitle">
+      Record a short selfie video.  
+      We use AI powered face and voice analysis to detect stress related signals.
+    </p>
+
+    <p class="subtitle small">
+      This is not a medical or diagnostic tool.
+    </p>
+
+    <!-- INSTRUCTIONS (MOBILE FIRST) -->
+    <div class="info-card">
+      <p><strong>Recording Instructions</strong></p>
+      <ul>
+        <li>Hold your phone steady</li>
+        <li>Look at the camera</li>
+        <li>Stay in frame</li>
+        <li>Speak naturally and calmly</li>
+      </ul>
+    </div>
+
+    <!-- QUESTIONS SHOWN (JS SPEAKS THEM TOO) -->
+    <div class="info-card">
+      <p><strong>Please answer these questions:</strong></p>
+      <p>1. How are you feeling today?</p>
+      <p>2. Did you feel more tired than usual today?</p>
+    </div>
+
+    <!-- VIDEO PREVIEW -->
+    <video
+      id="preview"
+      autoplay
+      muted
+      playsinline
+    ></video>
+
+    <!-- CONTROLS -->
+    <button
+      type="button"
+      class="primary"
+      onclick="startLiveCheckin()"
+    >
+      Start Recording
+    </button>
+
+    <button
+      type="button"
+      class="secondary"
+      id="stopBtn"
+      onclick="stopEarly()"
+      disabled
+    >
+      Stop Recording
+    </button>
+
+    <!-- UPLOAD OPTION -->
+    <div class="info-card">
+      <p class="small">Or upload an existing short video</p>
+
+      <input
+        type="file"
+        id="videoUpload"
+        accept="video/*"
+      />
+
+      <button
+        type="button"
+        class="secondary"
+        onclick="uploadExistingVideo()"
+      >
+        Upload Video
+      </button>
+    </div>
+
+    <!-- STATUS (JS CONTROLS THIS) -->
+    <p id="status"></p>
+
+    <!-- RESULT (MUST BE EMPTY INITIALLY) -->
+    <div id="result" style="display:none;"></div>
+
+    <!-- RESULT EXPLANATION (OUTSIDE RESULT DIV) -->
+    <div class="info-card">
+      <p class="small">
+        The result shows a stress signal level: Low, Medium, or High.
+      </p>
+
+      <p class="small">
+        Based on automated analysis of facial tension and voice features such as pitch, pauses, and energy.
+      </p>
+
+      <p class="small">
+        It does not diagnose any condition and is intended only for caregiver awareness.
+      </p>
+    </div>
+
+    <!-- FOOTER DISCLAIMER -->
+    <p class="tiny">
+      Disclaimer: This tool provides stress signal awareness only and does not offer medical advice.
+    </p>
+
+  </div>
+
+  <!-- JS -->
+  <script src="/static/script.js"></script>
+</body>
+</html>
