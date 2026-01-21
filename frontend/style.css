@@ -28,6 +28,14 @@ h1 {
   font-size: 12px;
   color: #666;
 }
+.hero-image {
+  width: 100%;
+  max-width: 640px;
+  border-radius: 14px;
+  margin: 16px auto 20px auto;
+  display: block;
+}
+
 
 .info-card {
   background: #eef2f5;
