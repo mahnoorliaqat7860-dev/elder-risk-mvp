@@ -1,7 +1,0 @@
-﻿fastapi
-uvicorn
-python-multipart
-opencv-python-headless
-numpy
-librosa
-soundfile
