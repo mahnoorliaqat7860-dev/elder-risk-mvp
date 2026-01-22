@@ -1,7 +1,5 @@
 print("ANALYZE HIT")
 
-
-import signals
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from concurrent.futures import ThreadPoolExecutor, TimeoutError
 from backend.utils.runtime import ENABLE_BACKEND_TIMEOUT
